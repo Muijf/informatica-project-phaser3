@@ -1,0 +1,30 @@
+{
+	"scripts": {
+		"start": "cross-env NODE_ENV=dev concurrently \"parcel src/index.html -p 8000\" \"electron .\"",
+		"build": "parcel build src/index.html --public-url ./ --out-dir dist && cross-env NODE_ENV=prod electron ."
+	},
+	"devDependencies": {
+		"@babel/core": "^7.10.5",
+		"babel-eslint": "^10.1.0",
+		"concurrently": "^6.0.1",
+		"cross-env": "^7.0.3",
+		"electron": "^12.0.2",
+		"eslint": "^6.8.0",
+		"minimist": ">=1.2.2",
+		"parcel-bundler": "^1.12.5",
+		"parcel-plugin-clean-easy": "^1.0.2",
+		"parcel-plugin-static-files-copy": "^2.6.0"
+	},
+	"dependencies": {
+		"express": "^4.17.1",
+		"phaser": "^3.50.1",
+		"phaser3-rex-plugins": "^1.1.44"
+	},
+	"parcelCleanPaths": [
+		"dist"
+	],
+	"staticFiles": {
+		"staticPath": "public",
+		"watcherGlob": "**"
+	}
+}
