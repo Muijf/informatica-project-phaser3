@@ -41,6 +41,11 @@ export default class GameScene extends Phaser.Scene
         {
             console.log(Math.floor(this.player.x), Math.floor(this.player.y - 5));
         }
+
+        if(this.state.coinCount === 69)
+        {
+            this.add.text(this.scale.width / 2, this.scale.height / 2, "JE HEBT ALLE MUNTJES VERZAMELD");
+        }
     }
 
     initHud()
@@ -85,7 +90,7 @@ export default class GameScene extends Phaser.Scene
         // Fade in
         this.tweens.add({
             targets: this.music,
-            volume: 0.01,
+            volume: 0.03,
             duration: 2500
         });
     }
